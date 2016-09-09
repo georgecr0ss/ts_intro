@@ -20,15 +20,20 @@ var Quater = (function () {
 var VendigMacihne = (function () {
     function VendigMacihne() {
         var _this = this;
-        this.paid = 0;
+        // private paid = 0;whitout knockout plain typescript
+        this.paid = ko.observable(0);
         this.acceptCoin = function (coin) {
-            _this.paid = _this.paid + coin.Value;
-            var element = document.getElementById("total");
-            element.innerHTML = _this.paid.toString();
+            // this.paid = this.paid + coin.Value; whitout knockout
+            // var element = document.getElementById("total");
+            // element.innerHTML = this.paid.toString();
+            var oldTotal = _this.paid();
+            _this.paid(oldTotal + coin.Value);
         };
     }
     return VendigMacihne;
 }());
 /// <reference path="vendingMachine.ts" />
+/// <reference path="typings/knockout.d.ts" />
 var machine = new VendigMacihne();
+ko.applyBindings(machine);
 //# sourceMappingURL=app.js.map
