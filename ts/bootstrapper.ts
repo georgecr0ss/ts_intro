@@ -3,4 +3,5 @@
 
 
 var machine = new VendigMacihne();
+machine.size = VendigMacihneSize.medium;
 ko.applyBindings(machine);

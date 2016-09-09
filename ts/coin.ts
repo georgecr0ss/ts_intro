@@ -4,8 +4,8 @@ class Quater {
         return this.value;
     }
  
-    getImageUrl (): string { 
-        return "../image/Quater.png";
+    getImgUrl(): string { 
+        return "./image/Quater.png";
     }
 
 }
